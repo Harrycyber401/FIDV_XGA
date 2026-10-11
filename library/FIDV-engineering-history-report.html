@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FIDV 工程发展史</title>
+<style>
+  :root {
+    --ink: #1a1f26;
+    --muted: #4a5560;
+    --rule: #c5ccd4;
+    --paper: #f7f5f0;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 11pt; }
+  body {
+    margin: 0 auto;
+    max-width: 180mm;
+    padding: 18mm 16mm 24mm;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti SC", "Noto Serif SC", serif;
+    line-height: 1.45;
+  }
+  h1 { font-size: 22pt; letter-spacing: 0.06em; margin: 0 0 0.4em; font-weight: 600; }
+  h2 { font-size: 13pt; margin: 1.6em 0 0.5em; page-break-after: avoid; border-bottom: 1px solid var(--rule); padding-bottom: 0.2em; }
+  h3 { font-size: 11.5pt; margin: 1.1em 0 0.35em; page-break-after: avoid; }
+  p, li { margin: 0.35em 0; }
+  .lede { color: var(--muted); font-size: 10pt; }
+  .cover-meta { margin: 1.2em 0 2em; font-size: 10pt; color: var(--muted); }
+  .cover-meta div { margin: 0.2em 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 0.6em 0 1em; page-break-inside: avoid; }
+  th, td { border: 1px solid var(--rule); padding: 0.28em 0.45em; text-align: left; vertical-align: top; }
+  th { background: #ece8e0; font-weight: 600; }
+  code, .path { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.88em; }
+  pre {
+    background: #efece6;
+    border: 1px solid var(--rule);
+    padding: 0.7em 0.9em;
+    font-size: 9pt;
+    overflow: auto;
+    page-break-inside: avoid;
+  }
+  ul { padding-left: 1.2em; }
+  .foot { margin-top: 2.5em; font-size: 9pt; color: var(--muted); }
+  .no-print { margin: 0 0 1.2em; font-size: 10pt; }
+  @media print {
+    body { max-width: none; padding: 12mm 14mm; background: white; }
+    .no-print { display: none; }
+    a { color: inherit; text-decoration: none; }
+    h2 { page-break-before: auto; }
+    #ch-timeline { page-break-before: always; }
+    #ch-run { page-break-before: always; }
+  }
+  @page { size: A4; margin: 14mm 14mm 16mm; }
+</style>
+</head>
+<body>
+  <p class="no-print">浏览器打开本页 → 打印 → 存储为 PDF。正文与 Markdown 读本 <code>FIDV-engineering-history-report.md</code> 同内容。</p>
+
+  <h1>FIDV 工程发展史</h1>
+  <p class="lede">Financial Information To Decision Visualization · 读本</p>
+  <div class="cover-meta">
+    <div>汇编日期：2026-10-05</div>
+    <div>依据：工作日志 001 / 002 / 003、DESIGN.md、CONCEPTS.md</div>
+    <div>仓库：https://github.com/Franzpur/-Financial-Information-To-Decision-Visualization-FIDV- · 分支 main</div>
+    <div>本册不是产品终审标准。改产品对照 DESIGN.md；改三维对照 CONCEPTS.md。</div>
+  </div>
+
+  <h2>1. 产品概述</h2>
+  <p>FIDV 是给金融工作者用的<strong>决策可视化</strong>工具：把大量行业与企业信息放进<strong>同一套坐标</strong>里看、移、点。第一版重心是人工智能相关科技行业、风险控制、债务风险，以及<strong>以企业为节点</strong>的传导。当前可运行的主视图是产业链立方体；门厅按 Bloomberg BICS 行业树下钻，四级可以打开公司名单。</p>
+
+  <h2>2. 三条设计理念</h2>
+  <p>摘自 <code>agent_tasklist/DESIGN.md</code>。</p>
+  <ol>
+    <li><strong>专业化</strong>：专业数据、可追溯来源、常见处理 + 独特处理。不为装饰或无法溯源的数字加功能。</li>
+    <li><strong>标准化</strong>：同一概念只用一个名字；分类有依据（现用 BICS）；视觉统一，简洁是第一要务。</li>
+    <li><strong>可操作化</strong>：数据可导入导出；可视化要能在统一三维空间里查看与移动，不要做成拆出去的孤页。</li>
+  </ol>
+  <p>总监只按这三条终审代码。队员改界面或名单时，要能回答：这是否帮判断、术语是否已有、结果能否回到立方体坐标。</p>
+
+  <h2 id="ch-timeline">3. 时间线（2026-09-25 → 2026-10-05）</h2>
+  <p>流水编号见工作日志 #1–#94（003 自 #90）。下面按阶段压缩。</p>
+
+  <h3>3.1 财务试读 → 立项立方体（09-25～09-26）</h3>
+  <ul>
+    <li>先读 GOOGL 示例表，讨论盈利、风险与融资（#1）。</li>
+    <li>要求可互动三维：点=公司，多层=产业链环节，从电力到模型端，美国/非美分色（#2）。</li>
+    <li>第一版是单文件 <code>ai-chain-cube.html</code> + Three.js。随后修乱码、导航、加载，把「平铺一张纸」改成 YZ 墙沿深度堆叠的立方体（#3–#8）。</li>
+  </ul>
+
+  <h3>3.2 视觉语言：荧光点、营收环、共面标签（09-26）</h3>
+  <ul>
+    <li>点球荧光蓝 / 非美橙；切片内按营收画同心环：外环小、圆心=100（#9–#13）。</li>
+    <li>标签贴在切片平面上，不跟着镜头转；Q/E 旋转整立方体。选中一层时其它环变暗；切层时镜头不要瞬移。</li>
+  </ul>
+
+  <h3>3.3 拆成可运行的工程包（09-26）</h3>
+  <ul>
+    <li>从单 HTML 拆成 <code>ai-chain/</code>：静态页 + 标准库 HTTP + SQLite（#14）。</li>
+    <li>入口 <code>Open-AI-Chain.command</code>，端口 <strong>8787</strong>。绑定 GitHub 账号 Franzpur（#17）。本地路径后迁到 <code>/Volumes/DATA/FIDV</code>。</li>
+  </ul>
+
+  <h3>3.4 概念库与坐标语言（09-27）</h3>
+  <ul>
+    <li>建 <code>ai-chain/CONCEPTS.md</code>，代码用 <code>[C-*]</code> 标签（#23）。</li>
+    <li>用户轴固定为 <strong>(s, x, y)</strong>：前/后 = ±s，右/左 = ±x，上/下 = ±y。电力在后（小 s），模型在前（大 s）。不要把电力叫「左」（#45）。</li>
+  </ul>
+
+  <h3>3.5 债券展开：做过，又收回（09-29）</h3>
+  <ul>
+    <li>曾把 GOOGL 债务现金流做成堆叠柱，并试过点 GOOGL 后视角右转出财务切片（#24–#27）。</li>
+    <li>业主要求一个决策视图。债券独立页与「点 GOOGL 转向」已从主工程删除，以后按 DESIGN 重做（#32）。</li>
+  </ul>
+
+  <h3>3.6 组织：总监、书记、总参谋部（10-02）</h3>
+  <ul>
+    <li><strong>总监</strong>：代码改完才审；通过不给建议；最多三审。</li>
+    <li><strong>书记</strong>：每次谈话最后记 <code>library/worklog-xxx.md</code>；满约一万字换册；不决策。</li>
+    <li><strong>总参谋部</strong>：仅「报文 / 报 / 电 / M / Message」或直接呼出时规划，且必须第一个执行；不指挥总监与书记。</li>
+    <li>抽出：焦点切片留在原地，其余立方体向左（−x）退开并淡出（#44–#50）。</li>
+  </ul>
+
+  <h3>3.7 视空间、间距 d、全幅界面</h3>
+  <ul>
+    <li>去掉 Alphabet 专用黄环：产品将不止 Google（#51）。</li>
+    <li>视空间半径 200 用户单位；层距因子 d（0%–200% 滑条）（#54）。</li>
+    <li>全幅立方体 + 浮动玻璃条，帮助默认关（#53）。</li>
+  </ul>
+
+  <h3>3.8 美工部、开屏、首页门厅（10-03）</h3>
+  <ul>
+    <li>Splash / logo / 启动器图标划归美工部，真源 <code>AESTHETIC.md</code>。</li>
+    <li>开屏迁到首页 <code>/</code>，进立方体不再播一遍（#68）。</li>
+    <li>BICS Equity Hierarchy 2024 建 3 类行业坐标（1842 节点）：紧凑码 bicsCode；产品字段 legalEntityCoord 为 7×2 连字符、浅叶右补 00（#64）。</li>
+    <li><code>/</code> 成为行业门厅，格子下钻 L1–L7；立方体改到 <code>/cube</code>（#65、#71）。</li>
+  </ul>
+
+  <h3>3.9 四级名单、信息部、数据审计（10-04）</h3>
+  <ul>
+    <li><code>DATA-SPACE/ICBC C/20261003/</code> 约 11.6 万行企业成员表作为四级真源（#73）。</li>
+    <li>点四级格打开 C-LIST <code>/list?bics=</code>：一企一行，身份=完整 Member Ticker，主业=最大 % Tot Rev（#74、#76）。</li>
+    <li>设立信息部（管理 / 清理 / 请求），与美工部同级（#75）。</li>
+    <li>Consumer Staples 仅 L1：不是从别的大类捞来的假名单；已审计并做了彭博补拉表 pull-staples-l2l4.xlsx（#77–#78）。</li>
+    <li>20261003 企业表与 BQLX.pdf 已进 GitHub；Office 锁文件不跟踪（#80–#81）。</li>
+    <li>本读本首次汇编于 #82（当时流水到 #81）；此后门厅继续改，见 3.10。</li>
+  </ul>
+
+  <h3>3.10 门厅：立方体入口、上市国、四段坐标（10-04）</h3>
+  <ul>
+    <li>页眉一枚 Decision cube 链到 <code>/cube</code>（可带 <code>?bics=</code>）（#83）。</li>
+    <li>上市国按 Bloomberg 黄键交易所码映射 ISO（不是总部，也不是立方体 US/INTL）。格子与下拉显示收录数；面包屑固定左上（#84）。</li>
+    <li>约 95 国 chip 收成可搜索下拉（最上 Search country）（#85）。</li>
+    <li>换国不再整页刷新：history.pushState + 再拉名单，滚动位置保留（#86）。</li>
+    <li>3 类坐标库内仍 7×2；门厅与名单只显示前 4 段（#87）。</li>
+  </ul>
+
+  <h3>3.11 队员读本与 10-05 数据（10-05）</h3>
+  <ul>
+    <li>#88–#90 已在 GitHub：上市国筛选、可搜索下拉、页内换国、四段 chrome、业主改本读本标题（读本 / 产品概述 / 三条设计理念 / 未完成）。</li>
+    <li>#91 试写 L5–L7 拉数表 <code>pull-comms-eq-l5l7.xlsx</code>（Communications Equipment 19101010）；mnemonic 空，须上机 FLDS；未摄入。</li>
+    <li>#92 摄入 <code>DATA-SPACE/ICBC C/20261005/</code> 14 份 Staples L4 xlsx（文件名=L4；Agricultural &amp; Producers → Agricultural Producers 12101010）。双 SRC 20261003+20261005。跳过旧 L1 Staples、pull-*、~$；Other Wholesalers - Staples 已摄入。成员约 117255。库 gitignore。</li>
+    <li>#93 <code>diff.xlsx</code>：In product = 门厅主业家数，不是表行数。Drop = 并入他主业 + 空%。Government 源表 25000 且 % 全空；diff Real=117982 与源表不符。未从库删除。</li>
+    <li>#94 空 % Tot Rev 仍进名单；空≠100；有数字仍赢；企业 <code>legalEntityCoord</code> 前缀「-」（chrome 保留负号 + 四段）；节点坐标无负号。门厅 All 98374；Government 约 25028。</li>
+  </ul>
+
+  <h2 id="ch-run">4. 今天怎么打开</h2>
+<pre>cd /Volumes/DATA/FIDV
+./Open-AI-Cube.command
+# 或  cd ai-chain && ./Open-AI-Chain.command</pre>
+  <table>
+    <thead><tr><th>地址</th><th>是什么</th></tr></thead>
+    <tbody>
+      <tr><td>http://127.0.0.1:8787/</td><td>行业门厅 C-HOME（冷进有开屏）</td></tr>
+      <tr><td>/?bics=</td><td>同页下钻非叶节点</td></tr>
+      <tr><td>/?listingCountry=</td><td>按上市地筛（可与 bics 同用）</td></tr>
+      <tr><td>/list?bics=</td><td>四级公司名单 C-LIST</td></tr>
+      <tr><td>/cube 或 /cube?bics=</td><td>产业链立方体 C-CUBE</td></tr>
+    </tbody>
+  </table>
+  <p>种子库 <code>ai_chain.db</code> 与四级成员库 <code>bics_entities_20261003.db</code> 不提交；本机生成。</p>
+
+  <h2>5. 仓库地图</h2>
+  <table>
+    <thead><tr><th>路径</th><th>认作</th></tr></thead>
+    <tbody>
+      <tr><td>agent_tasklist/DESIGN.md</td><td>产品理念；总监终审唯一标准</td></tr>
+      <tr><td>agent_tasklist/AESTHETIC.md</td><td>色板、玻璃、开屏、图标</td></tr>
+      <tr><td>agent_tasklist/INFORMATION.md</td><td>数据词条、乱缺、拉数公式</td></tr>
+      <tr><td>agent_tasklist/RULE.md</td><td>何时派哪个子代理</td></tr>
+      <tr><td>agents/</td><td>角色说明书</td></tr>
+      <tr><td>ai-chain/</td><td>可运行产品</td></tr>
+      <tr><td>ai-chain/CONCEPTS.md</td><td>切片 / 轴 / 抽出等冻结约定</td></tr>
+      <tr><td>class-3-coords/BICS-Classification/</td><td>BICS 2024 层级库 + 摄入脚本</td></tr>
+      <tr><td>DATA-SPACE/</td><td>彭博导出邻接盘（928 + 20261003 + 20261005）</td></tr>
+      <tr><td>library/</td><td>工作日志与本报告</td></tr>
+    </tbody>
+  </table>
+
+  <h2>6. 三类坐标（不要混名）</h2>
+  <table>
+    <thead><tr><th>类</th><th>名字</th><th>干什么</th></tr></thead>
+    <tbody>
+      <tr><td>1 类</td><td>位置坐标 (s, x, y)</td><td>立方体里唯一摆放语言</td></tr>
+      <tr><td>2 类</td><td>环上相对坐标 ringCos / ringSin</td><td>切片内营收环，不要叫 x/y</td></tr>
+      <tr><td>3 类</td><td>行业坐标 legalEntityCoord</td><td>BICS；存储 7×2；门厅/名单只画前 4 段；空占比企业坐标可前缀「-」；节点坐标无负号；立方体上不画</td></tr>
+    </tbody>
+  </table>
+  <p>抽出：焦点切片不动，其余沿 −x 退一面宽并淡出。面跨度 x、y ∈ [0, 10]；层距 = d · UNIT。</p>
+
+  <h2>7. 数据现状（勿当已修）</h2>
+  <ul>
+    <li>层级：bics-equity-hierarchy-2024.json。</li>
+    <li>成员：20261003 各 L1 工作簿 + 20261005 Staples L4 → 本地 SQLite。主业 = 同一完整 ticker 的最大 % Tot Rev；空≠100；有数字仍赢；空占比可进名单，企业坐标前缀「-」。</li>
+    <li>Consumer Staples：已由 20261005 十四份 L4 表摄入（跳过旧 L1 表）。</li>
+    <li>Government：源表约 25000 行仍报截断；空%现可进名单（门厅约 25028）。</li>
+    <li>BQLX.pdf 是终端帮助，不是 FIDV 菜谱。</li>
+    <li>上市地：黄键交易所码 → ISO（listing.py）；未映射进 Unmapped。与立方体 ?country= 分轴。</li>
+    <li>立方体 companies.json 仍是早期演示链，与四级名单不是同一张表。</li>
+  </ul>
+
+  <h2>8. 协作时听谁的</h2>
+  <ol>
+    <li>口令「电」（或报文/报/M/Message）→ 总参谋部最先，只出意志+任务单。</li>
+    <li>可调度美工部、信息部。总参谋部不能调度或改写总监、书记。</li>
+    <li>父代理写代码、落盘。</li>
+    <li>有代码改动 → 总监对照 DESIGN（至多三审）。</li>
+    <li>书记最后记账。</li>
+  </ol>
+  <p>改外观先美工部；改词条/乱缺/彭博公式先信息部（须写 desk=manage|clean|request）。口令「停止」则停派。</p>
+
+  <h2>9. 提交约定</h2>
+  <p>远程 origin/main。不要提交 ~$*.xlsx、本机 .db、密钥。</p>
+
+  <h2>10. 未完成</h2>
+  <ul>
+    <li>Government 源表约 25000 行截断，仍待完整源。</li>
+    <li>L5–L7 拉数字段 mnemonic 未确认（试表 pull-comms-eq-l5l7.xlsx）。</li>
+    <li>债务/传导可视化接到同一立方体，不要再做孤页。</li>
+    <li>立方体 companies.json 尚未接到 BICS 四级成员。</li>
+    <li>三维导出、自制图表：理念已写，产品未做。</li>
+  </ul>
+
+  <p class="foot">工作日志真源：worklog-001.md（#1–#52）、worklog-002.md（#53–#87）、worklog-003.md（#90 起）。本报告是压缩本，不改写旧日志行。打印纸张建议 A4。</p>
+</body>
+</html>

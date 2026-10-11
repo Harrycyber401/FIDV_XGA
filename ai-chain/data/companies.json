@@ -1,0 +1,952 @@
+[
+  {
+    "id": 0,
+    "name": "Constellation Energy",
+    "rev_bn": 23.5,
+    "ticker": "CEG",
+    "country": "US",
+    "layer_index": 0,
+    "note": "Largest US nuclear fleet; hyperscaler power PPAs (e.g. Microsoft).",
+    "value_m": null
+  },
+  {
+    "id": 1,
+    "name": "Vistra",
+    "rev_bn": 17.2,
+    "ticker": "VST",
+    "country": "US",
+    "layer_index": 0,
+    "note": "Nuclear + gas generation; long-term nuclear PPAs with Amazon and Meta.",
+    "value_m": null
+  },
+  {
+    "id": 2,
+    "name": "Talen Energy",
+    "rev_bn": 2.4,
+    "ticker": "TLN",
+    "country": "US",
+    "layer_index": 0,
+    "note": "Susquehanna nuclear; AWS campus and long-duration baseload PPA.",
+    "value_m": null
+  },
+  {
+    "id": 3,
+    "name": "NextEra Energy",
+    "rev_bn": 27.1,
+    "ticker": "NEE",
+    "country": "US",
+    "layer_index": 0,
+    "note": "Renewables plus nuclear restart (e.g. Duane Arnold) tied to Google load.",
+    "value_m": null
+  },
+  {
+    "id": 4,
+    "name": "Dominion Energy",
+    "rev_bn": 14.9,
+    "ticker": "D",
+    "country": "US",
+    "layer_index": 0,
+    "note": "Utility serving the Virginia data-center corridor.",
+    "value_m": null
+  },
+  {
+    "id": 5,
+    "name": "Duke Energy",
+    "rev_bn": 30.4,
+    "ticker": "DUK",
+    "country": "US",
+    "layer_index": 0,
+    "note": "Large Southeast utility with rising data-center load.",
+    "value_m": null
+  },
+  {
+    "id": 6,
+    "name": "Southern Company",
+    "rev_bn": 26.7,
+    "ticker": "SO",
+    "country": "US",
+    "layer_index": 0,
+    "note": "Southeast generation and transmission.",
+    "value_m": null
+  },
+  {
+    "id": 7,
+    "name": "Entergy",
+    "rev_bn": 12.1,
+    "ticker": "ETR",
+    "country": "US",
+    "layer_index": 0,
+    "note": "Gulf Coast utility.",
+    "value_m": null
+  },
+  {
+    "id": 8,
+    "name": "GE Vernova",
+    "rev_bn": 34.9,
+    "ticker": "GEV",
+    "country": "US",
+    "layer_index": 0,
+    "note": "Gas turbines, grid, and generation equipment.",
+    "value_m": null
+  },
+  {
+    "id": 9,
+    "name": "Oklo",
+    "rev_bn": 0.02,
+    "ticker": "OKLO",
+    "country": "US",
+    "layer_index": 0,
+    "note": "Advanced small reactors; hyperscaler interest path.",
+    "value_m": null
+  },
+  {
+    "id": 10,
+    "name": "TerraPower",
+    "rev_bn": 0.05,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 0,
+    "note": "Natrium advanced reactors; Meta support path.",
+    "value_m": null
+  },
+  {
+    "id": 11,
+    "name": "Eaton",
+    "rev_bn": 24.9,
+    "ticker": "ETN",
+    "country": "US",
+    "layer_index": 1,
+    "note": "Power distribution, UPS, data-center electrical.",
+    "value_m": null
+  },
+  {
+    "id": 12,
+    "name": "Vertiv",
+    "rev_bn": 8.0,
+    "ticker": "VRT",
+    "country": "US",
+    "layer_index": 1,
+    "note": "Critical power and thermal management for AI halls.",
+    "value_m": null
+  },
+  {
+    "id": 13,
+    "name": "nVent",
+    "rev_bn": 3.3,
+    "ticker": "NVT",
+    "country": "US",
+    "layer_index": 1,
+    "note": "Enclosures, electrical and cooling interconnect.",
+    "value_m": null
+  },
+  {
+    "id": 14,
+    "name": "Quanta Services",
+    "rev_bn": 23.7,
+    "ticker": "PWR",
+    "country": "US",
+    "layer_index": 1,
+    "note": "Transmission-line and infrastructure construction.",
+    "value_m": null
+  },
+  {
+    "id": 15,
+    "name": "Emerson Electric",
+    "rev_bn": 17.5,
+    "ticker": "EMR",
+    "country": "US",
+    "layer_index": 1,
+    "note": "Industrial automation and electrical controls.",
+    "value_m": null
+  },
+  {
+    "id": 16,
+    "name": "Hubbell",
+    "rev_bn": 5.6,
+    "ticker": "HUBB",
+    "country": "US",
+    "layer_index": 1,
+    "note": "Electrical connectivity and utility products.",
+    "value_m": null
+  },
+  {
+    "id": 17,
+    "name": "Schneider Electric",
+    "rev_bn": 39.3,
+    "ticker": "SU",
+    "country": "FR",
+    "layer_index": 1,
+    "note": "Electrical systems, microgrids, liquid-cooling infrastructure.",
+    "value_m": null
+  },
+  {
+    "id": 18,
+    "name": "ABB",
+    "rev_bn": 32.2,
+    "ticker": "ABBNY",
+    "country": "CH",
+    "layer_index": 1,
+    "note": "Switchgear and electrical drives.",
+    "value_m": null
+  },
+  {
+    "id": 19,
+    "name": "Siemens",
+    "rev_bn": 82.0,
+    "ticker": "SIEGY",
+    "country": "DE",
+    "layer_index": 1,
+    "note": "Electrical and industrial automation.",
+    "value_m": null
+  },
+  {
+    "id": 20,
+    "name": "Caterpillar",
+    "rev_bn": 64.8,
+    "ticker": "CAT",
+    "country": "US",
+    "layer_index": 1,
+    "note": "Diesel backup generation.",
+    "value_m": null
+  },
+  {
+    "id": 21,
+    "name": "Cummins",
+    "rev_bn": 34.1,
+    "ticker": "CMI",
+    "country": "US",
+    "layer_index": 1,
+    "note": "Backup gensets and power systems.",
+    "value_m": null
+  },
+  {
+    "id": 22,
+    "name": "Equinix",
+    "rev_bn": 8.7,
+    "ticker": "EQIX",
+    "country": "US",
+    "layer_index": 2,
+    "note": "Global interconnection and colocation.",
+    "value_m": null
+  },
+  {
+    "id": 23,
+    "name": "Digital Realty",
+    "rev_bn": 5.5,
+    "ticker": "DLR",
+    "country": "US",
+    "layer_index": 2,
+    "note": "Large data-center REIT.",
+    "value_m": null
+  },
+  {
+    "id": 24,
+    "name": "Vantage Data Centers",
+    "rev_bn": 2.2,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 2,
+    "note": "Hyperscale campus developer.",
+    "value_m": null
+  },
+  {
+    "id": 25,
+    "name": "CyrusOne",
+    "rev_bn": 1.9,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 2,
+    "note": "Texas data-center buildouts with Constellation power deals.",
+    "value_m": null
+  },
+  {
+    "id": 26,
+    "name": "CoolIT Systems",
+    "rev_bn": 0.35,
+    "ticker": null,
+    "country": "CA",
+    "layer_index": 2,
+    "note": "Direct-to-chip liquid cooling.",
+    "value_m": null
+  },
+  {
+    "id": 27,
+    "name": "Boyd Corporation",
+    "rev_bn": 1.6,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 2,
+    "note": "Thermal management and liquid cooling.",
+    "value_m": null
+  },
+  {
+    "id": 28,
+    "name": "LiquidStack",
+    "rev_bn": 0.25,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 2,
+    "note": "Immersion and direct liquid-cooling systems.",
+    "value_m": null
+  },
+  {
+    "id": 29,
+    "name": "Iron Mountain",
+    "rev_bn": 5.9,
+    "ticker": "IRM",
+    "country": "US",
+    "layer_index": 2,
+    "note": "Data-center and storage facilities.",
+    "value_m": null
+  },
+  {
+    "id": 30,
+    "name": "American Tower",
+    "rev_bn": 11.1,
+    "ticker": "AMT",
+    "country": "US",
+    "layer_index": 2,
+    "note": "Digital infrastructure REIT.",
+    "value_m": null
+  },
+  {
+    "id": 31,
+    "name": "Applied Materials",
+    "rev_bn": 27.2,
+    "ticker": "AMAT",
+    "country": "US",
+    "layer_index": 3,
+    "note": "Deposition, CMP, and process tools.",
+    "value_m": null
+  },
+  {
+    "id": 32,
+    "name": "Lam Research",
+    "rev_bn": 14.9,
+    "ticker": "LRCX",
+    "country": "US",
+    "layer_index": 3,
+    "note": "Etch and deposition.",
+    "value_m": null
+  },
+  {
+    "id": 33,
+    "name": "KLA",
+    "rev_bn": 10.8,
+    "ticker": "KLAC",
+    "country": "US",
+    "layer_index": 3,
+    "note": "Process control and metrology.",
+    "value_m": null
+  },
+  {
+    "id": 34,
+    "name": "ASML",
+    "rev_bn": 30.0,
+    "ticker": "ASML",
+    "country": "NL",
+    "layer_index": 3,
+    "note": "Sole high-volume EUV lithography supplier.",
+    "value_m": null
+  },
+  {
+    "id": 35,
+    "name": "Teradyne",
+    "rev_bn": 2.8,
+    "ticker": "TER",
+    "country": "US",
+    "layer_index": 3,
+    "note": "Semiconductor test.",
+    "value_m": null
+  },
+  {
+    "id": 36,
+    "name": "Camtek",
+    "rev_bn": 0.43,
+    "ticker": "CAMT",
+    "country": "IL",
+    "layer_index": 3,
+    "note": "Advanced-packaging inspection.",
+    "value_m": null
+  },
+  {
+    "id": 37,
+    "name": "Tokyo Electron",
+    "rev_bn": 16.5,
+    "ticker": "TOELY",
+    "country": "JP",
+    "layer_index": 3,
+    "note": "Coater/developer and etch tools.",
+    "value_m": null
+  },
+  {
+    "id": 38,
+    "name": "Micron Technology",
+    "rev_bn": 25.1,
+    "ticker": "MU",
+    "country": "US",
+    "layer_index": 4,
+    "note": "Primary US HBM / DRAM supplier.",
+    "value_m": null
+  },
+  {
+    "id": 39,
+    "name": "SK hynix",
+    "rev_bn": 48.0,
+    "ticker": "000660 KS",
+    "country": "KR",
+    "layer_index": 4,
+    "note": "HBM leader; Alphabet CAPEX supplier.",
+    "value_m": 1290.9
+  },
+  {
+    "id": 40,
+    "name": "Samsung Electronics",
+    "rev_bn": 210.0,
+    "ticker": "005930 KS",
+    "country": "KR",
+    "layer_index": 4,
+    "note": "Memory and foundry; largest quantified Alphabet CAPEX link.",
+    "value_m": 8312.9
+  },
+  {
+    "id": 41,
+    "name": "SanDisk / WD",
+    "rev_bn": 13.0,
+    "ticker": "WDC",
+    "country": "US",
+    "layer_index": 4,
+    "note": "NAND flash.",
+    "value_m": null
+  },
+  {
+    "id": 42,
+    "name": "Kioxia",
+    "rev_bn": 8.5,
+    "ticker": null,
+    "country": "JP",
+    "layer_index": 4,
+    "note": "NAND flash.",
+    "value_m": null
+  },
+  {
+    "id": 43,
+    "name": "Intel",
+    "rev_bn": 53.1,
+    "ticker": "INTC",
+    "country": "US",
+    "layer_index": 5,
+    "note": "IDM plus foundry; US advanced capacity.",
+    "value_m": null
+  },
+  {
+    "id": 44,
+    "name": "GlobalFoundries",
+    "rev_bn": 7.0,
+    "ticker": "GFS",
+    "country": "US",
+    "layer_index": 5,
+    "note": "Specialty process and US capacity.",
+    "value_m": null
+  },
+  {
+    "id": 45,
+    "name": "TSMC",
+    "rev_bn": 88.0,
+    "ticker": "TSM",
+    "country": "TW",
+    "layer_index": 5,
+    "note": "Leading-edge logic and CoWoS bottleneck node.",
+    "value_m": null
+  },
+  {
+    "id": 46,
+    "name": "Samsung Foundry",
+    "rev_bn": 22.0,
+    "ticker": "005930 KS",
+    "country": "KR",
+    "layer_index": 5,
+    "note": "Advanced logic foundry alternative.",
+    "value_m": null
+  },
+  {
+    "id": 47,
+    "name": "Amkor Technology",
+    "rev_bn": 6.4,
+    "ticker": "AMKR",
+    "country": "US",
+    "layer_index": 5,
+    "note": "Outsourced advanced packaging.",
+    "value_m": null
+  },
+  {
+    "id": 48,
+    "name": "ASE Technology",
+    "rev_bn": 18.5,
+    "ticker": "ASX",
+    "country": "TW",
+    "layer_index": 5,
+    "note": "Assembly and test.",
+    "value_m": null
+  },
+  {
+    "id": 49,
+    "name": "NVIDIA",
+    "rev_bn": 130.5,
+    "ticker": "NVDA",
+    "country": "US",
+    "layer_index": 6,
+    "note": "GPU and AI systems stack; Alphabet CAPEX supplier.",
+    "value_m": 3314.5
+  },
+  {
+    "id": 50,
+    "name": "Broadcom",
+    "rev_bn": 51.6,
+    "ticker": "AVGO",
+    "country": "US",
+    "layer_index": 6,
+    "note": "Custom ASIC and switching silicon; Alphabet CAPEX supplier.",
+    "value_m": 4016.0
+  },
+  {
+    "id": 51,
+    "name": "AMD",
+    "rev_bn": 25.8,
+    "ticker": "AMD",
+    "country": "US",
+    "layer_index": 6,
+    "note": "Instinct GPU and EPYC; Alphabet CAPEX supplier.",
+    "value_m": 157.9
+  },
+  {
+    "id": 52,
+    "name": "Marvell Technology",
+    "rev_bn": 5.8,
+    "ticker": "MRVL",
+    "country": "US",
+    "layer_index": 6,
+    "note": "Custom silicon and optical DSP; Alphabet CAPEX supplier.",
+    "value_m": 106.1
+  },
+  {
+    "id": 53,
+    "name": "Intel Gaudi / Xeon",
+    "rev_bn": 40.0,
+    "ticker": "INTC",
+    "country": "US",
+    "layer_index": 6,
+    "note": "CPU and AI accelerator path.",
+    "value_m": null
+  },
+  {
+    "id": 54,
+    "name": "Qualcomm",
+    "rev_bn": 39.0,
+    "ticker": "QCOM",
+    "country": "US",
+    "layer_index": 6,
+    "note": "Edge and mobile AI silicon.",
+    "value_m": null
+  },
+  {
+    "id": 55,
+    "name": "MediaTek",
+    "rev_bn": 16.2,
+    "ticker": "2454 TT",
+    "country": "TW",
+    "layer_index": 6,
+    "note": "SoC; Alphabet COGS supplier.",
+    "value_m": 270.4
+  },
+  {
+    "id": 56,
+    "name": "Arm",
+    "rev_bn": 4.0,
+    "ticker": "ARM",
+    "country": "GB",
+    "layer_index": 6,
+    "note": "CPU ISA and IP.",
+    "value_m": null
+  },
+  {
+    "id": 57,
+    "name": "Arista Networks",
+    "rev_bn": 7.0,
+    "ticker": "ANET",
+    "country": "US",
+    "layer_index": 7,
+    "note": "AI Ethernet switching.",
+    "value_m": null
+  },
+  {
+    "id": 58,
+    "name": "Cisco Systems",
+    "rev_bn": 53.8,
+    "ticker": "CSCO",
+    "country": "US",
+    "layer_index": 7,
+    "note": "Networking gear; Alphabet CAPEX supplier.",
+    "value_m": 241.0
+  },
+  {
+    "id": 59,
+    "name": "Coherent",
+    "rev_bn": 5.0,
+    "ticker": "COHR",
+    "country": "US",
+    "layer_index": 7,
+    "note": "Lasers and optical modules.",
+    "value_m": null
+  },
+  {
+    "id": 60,
+    "name": "Lumentum",
+    "rev_bn": 1.6,
+    "ticker": "LITE",
+    "country": "US",
+    "layer_index": 7,
+    "note": "Optical communications; Alphabet CAPEX supplier.",
+    "value_m": 112.1
+  },
+  {
+    "id": 61,
+    "name": "Credo Technology",
+    "rev_bn": 0.45,
+    "ticker": "CRDO",
+    "country": "US",
+    "layer_index": 7,
+    "note": "High-speed connectivity and AEC.",
+    "value_m": null
+  },
+  {
+    "id": 62,
+    "name": "Astera Labs",
+    "rev_bn": 0.55,
+    "ticker": "ALAB",
+    "country": "US",
+    "layer_index": 7,
+    "note": "CXL / connectivity silicon.",
+    "value_m": null
+  },
+  {
+    "id": 63,
+    "name": "Zhongji Innolight",
+    "rev_bn": 5.2,
+    "ticker": "300308 CH",
+    "country": "CN",
+    "layer_index": 7,
+    "note": "High-speed optical modules; Alphabet CAPEX supplier.",
+    "value_m": 251.7
+  },
+  {
+    "id": 64,
+    "name": "ZTE",
+    "rev_bn": 14.8,
+    "ticker": "000063 CH",
+    "country": "CN",
+    "layer_index": 7,
+    "note": "Telecom equipment; Alphabet CAPEX supplier.",
+    "value_m": 186.7
+  },
+  {
+    "id": 65,
+    "name": "Super Micro",
+    "rev_bn": 15.0,
+    "ticker": "SMCI",
+    "country": "US",
+    "layer_index": 8,
+    "note": "High-density AI servers.",
+    "value_m": null
+  },
+  {
+    "id": 66,
+    "name": "Dell Technologies",
+    "rev_bn": 95.0,
+    "ticker": "DELL",
+    "country": "US",
+    "layer_index": 8,
+    "note": "Enterprise and AI servers.",
+    "value_m": null
+  },
+  {
+    "id": 67,
+    "name": "Hewlett Packard Enterprise",
+    "rev_bn": 29.5,
+    "ticker": "HPE",
+    "country": "US",
+    "layer_index": 8,
+    "note": "Servers and private cloud.",
+    "value_m": null
+  },
+  {
+    "id": 68,
+    "name": "Jabil",
+    "rev_bn": 30.0,
+    "ticker": "JBL",
+    "country": "US",
+    "layer_index": 8,
+    "note": "Electronics manufacturing; Alphabet COGS supplier.",
+    "value_m": 119.5
+  },
+  {
+    "id": 69,
+    "name": "Flex",
+    "rev_bn": 25.0,
+    "ticker": "FLEX",
+    "country": "SG",
+    "layer_index": 8,
+    "note": "EMS; Alphabet CAPEX supplier.",
+    "value_m": 175.9
+  },
+  {
+    "id": 70,
+    "name": "Celestica",
+    "rev_bn": 8.0,
+    "ticker": "CLS",
+    "country": "CA",
+    "layer_index": 8,
+    "note": "AI server / networking manufacturing; Alphabet CAPEX supplier.",
+    "value_m": 959.8
+  },
+  {
+    "id": 71,
+    "name": "Hon Hai (Foxconn)",
+    "rev_bn": 210.0,
+    "ticker": "2317 TT",
+    "country": "TW",
+    "layer_index": 8,
+    "note": "Largest EMS; Alphabet CAPEX supplier.",
+    "value_m": 1851.2
+  },
+  {
+    "id": 72,
+    "name": "Quanta Computer",
+    "rev_bn": 42.0,
+    "ticker": "2382 TT",
+    "country": "TW",
+    "layer_index": 8,
+    "note": "Hyperscale server ODM.",
+    "value_m": null
+  },
+  {
+    "id": 73,
+    "name": "Wiwynn",
+    "rev_bn": 12.5,
+    "ticker": "6669 TT",
+    "country": "TW",
+    "layer_index": 8,
+    "note": "Cloud server ODM.",
+    "value_m": null
+  },
+  {
+    "id": 74,
+    "name": "Alphabet / Google Cloud",
+    "rev_bn": 350.0,
+    "ticker": "GOOGL",
+    "country": "US",
+    "layer_index": 9,
+    "note": "Demand origin: target customer in this dataset.",
+    "value_m": null
+  },
+  {
+    "id": 75,
+    "name": "Microsoft Azure",
+    "rev_bn": 245.0,
+    "ticker": "MSFT",
+    "country": "US",
+    "layer_index": 9,
+    "note": "Primary compute and distribution partner for OpenAI.",
+    "value_m": null
+  },
+  {
+    "id": 76,
+    "name": "Amazon Web Services",
+    "rev_bn": 638.0,
+    "ticker": "AMZN",
+    "country": "US",
+    "layer_index": 9,
+    "note": "Major cloud partner for Anthropic; nuclear power load.",
+    "value_m": null
+  },
+  {
+    "id": 77,
+    "name": "Meta",
+    "rev_bn": 164.0,
+    "ticker": "META",
+    "country": "US",
+    "layer_index": 9,
+    "note": "Own training clusters and open models.",
+    "value_m": null
+  },
+  {
+    "id": 78,
+    "name": "Oracle Cloud",
+    "rev_bn": 57.0,
+    "ticker": "ORCL",
+    "country": "US",
+    "layer_index": 9,
+    "note": "Large contracted GPU cloud.",
+    "value_m": null
+  },
+  {
+    "id": 79,
+    "name": "CoreWeave",
+    "rev_bn": 1.9,
+    "ticker": "CRWV",
+    "country": "US",
+    "layer_index": 9,
+    "note": "Specialty GPU cloud; Alphabet COGS supplier.",
+    "value_m": 141.8
+  },
+  {
+    "id": 80,
+    "name": "IBM",
+    "rev_bn": 62.8,
+    "ticker": "IBM",
+    "country": "US",
+    "layer_index": 9,
+    "note": "Enterprise AI and hybrid cloud.",
+    "value_m": null
+  },
+  {
+    "id": 81,
+    "name": "Alibaba Cloud",
+    "rev_bn": 137.0,
+    "ticker": "BABA",
+    "country": "CN",
+    "layer_index": 9,
+    "note": "China hyperscale cloud.",
+    "value_m": null
+  },
+  {
+    "id": 82,
+    "name": "Tencent Cloud",
+    "rev_bn": 86.0,
+    "ticker": "TCEHY",
+    "country": "CN",
+    "layer_index": 9,
+    "note": "China hyperscale cloud.",
+    "value_m": null
+  },
+  {
+    "id": 83,
+    "name": "OpenAI",
+    "rev_bn": 5.5,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 10,
+    "note": "ChatGPT / API; end-customer and developer front door.",
+    "value_m": null
+  },
+  {
+    "id": 84,
+    "name": "Anthropic",
+    "rev_bn": 1.2,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 10,
+    "note": "Claude; enterprise and developer interface.",
+    "value_m": null
+  },
+  {
+    "id": 85,
+    "name": "Google DeepMind",
+    "rev_bn": 350.0,
+    "ticker": "GOOGL",
+    "country": "US",
+    "layer_index": 10,
+    "note": "Gemini and related models; tied to Alphabet cloud.",
+    "value_m": null
+  },
+  {
+    "id": 86,
+    "name": "xAI",
+    "rev_bn": 0.2,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 10,
+    "note": "Grok; own compute buildout.",
+    "value_m": null
+  },
+  {
+    "id": 87,
+    "name": "Meta AI",
+    "rev_bn": 164.0,
+    "ticker": "META",
+    "country": "US",
+    "layer_index": 10,
+    "note": "Llama open distribution.",
+    "value_m": null
+  },
+  {
+    "id": 88,
+    "name": "Amazon / Bedrock",
+    "rev_bn": 638.0,
+    "ticker": "AMZN",
+    "country": "US",
+    "layer_index": 10,
+    "note": "Model hosting and distribution platform.",
+    "value_m": null
+  },
+  {
+    "id": 89,
+    "name": "Microsoft Copilot",
+    "rev_bn": 245.0,
+    "ticker": "MSFT",
+    "country": "US",
+    "layer_index": 10,
+    "note": "Office and enterprise front door.",
+    "value_m": null
+  },
+  {
+    "id": 90,
+    "name": "Cohere",
+    "rev_bn": 0.12,
+    "ticker": null,
+    "country": "CA",
+    "layer_index": 10,
+    "note": "Enterprise LLM.",
+    "value_m": null
+  },
+  {
+    "id": 91,
+    "name": "Mistral AI",
+    "rev_bn": 0.15,
+    "ticker": null,
+    "country": "FR",
+    "layer_index": 10,
+    "note": "European open / commercial models.",
+    "value_m": null
+  },
+  {
+    "id": 92,
+    "name": "Perplexity",
+    "rev_bn": 0.1,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 10,
+    "note": "Search-style AI application.",
+    "value_m": null
+  },
+  {
+    "id": 93,
+    "name": "Scale AI",
+    "rev_bn": 0.9,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 10,
+    "note": "Data and evaluation infrastructure.",
+    "value_m": null
+  },
+  {
+    "id": 94,
+    "name": "Databricks",
+    "rev_bn": 2.4,
+    "ticker": null,
+    "country": "US",
+    "layer_index": 10,
+    "note": "Enterprise AI data platform.",
+    "value_m": null
+  }
+]

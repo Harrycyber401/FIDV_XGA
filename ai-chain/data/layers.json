@@ -1,0 +1,57 @@
+[
+  {
+    "id": "power",
+    "name": "Power & baseload generation",
+    "blurb": "Nuclear, gas, renewables, AI-campus PPAs"
+  },
+  {
+    "id": "grid",
+    "name": "Grid & electrical gear",
+    "blurb": "Switchgear, UPS, PDU, construction, interconnect"
+  },
+  {
+    "id": "facility",
+    "name": "Cooling & data-center shell",
+    "blurb": "Liquid cooling, campuses, REIT / colo"
+  },
+  {
+    "id": "equipment",
+    "name": "Semiconductor equipment",
+    "blurb": "Lithography, deposition, etch, metrology"
+  },
+  {
+    "id": "memory",
+    "name": "Memory",
+    "blurb": "HBM, DRAM, NAND"
+  },
+  {
+    "id": "foundry",
+    "name": "Foundry & advanced packaging",
+    "blurb": "Leading-edge logic, CoWoS / HBM packaging"
+  },
+  {
+    "id": "silicon",
+    "name": "AI accelerators & chip design",
+    "blurb": "GPU, custom ASIC, interconnect silicon"
+  },
+  {
+    "id": "network",
+    "name": "Networking & optical",
+    "blurb": "Ethernet, InfiniBand, optics, DSP"
+  },
+  {
+    "id": "server",
+    "name": "Servers & EMS / ODM",
+    "blurb": "Systems, contract manufacturing"
+  },
+  {
+    "id": "cloud",
+    "name": "Cloud & GPU platforms",
+    "blurb": "Hyperscale cloud, specialty GPU cloud"
+  },
+  {
+    "id": "model",
+    "name": "Models & customer interface",
+    "blurb": "Frontier labs and application front doors"
+  }
+]

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Industry Chain — 3D Slice Cube</title>
+<link rel="stylesheet" href="/css/app.css?v=22" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="bootError" hidden></div>
+
+<div id="app" hidden>
+  <div id="viewport">
+    <!-- [C-GATE] Pre-cube stage chooser: full-viewport vertical stage list + intro, enter focuses the slice. -->
+    <div id="stageGate" class="stage-gate">
+      <header class="stage-gate-head">
+        <div class="stage-gate-brand">
+          <span class="stage-gate-wordmark">FIDV</span>
+          <span class="stage-gate-sub">AI Industry Chain · 产业链环节选择</span>
+        </div>
+        <button class="chip" id="gateOverview" type="button">Overview 全景</button>
+      </header>
+      <div class="stage-gate-body">
+        <nav class="stage-list" id="stageList" aria-label="Industry chain stages"></nav>
+        <aside class="stage-intro" id="stageIntro">
+          <p class="note">Select a stage on the left to read its intro. Click it again (or use the button) to enter that slice — the slice pops out of the cube.</p>
+        </aside>
+      </div>
+      <footer class="stage-gate-foot">
+        <span>11 stages · Power (back, −s) → Models (front, +s)</span>
+        <span>Click once to read · click again / Enter button to open the slice</span>
+      </footer>
+    </div>
+
+    <div class="top-search">
+      <label class="visually-hidden" for="search">Search company or ticker</label>
+      <input id="search" type="search" placeholder="Search company or ticker…" autocomplete="off" />
+      <div id="results"></div>
+    </div>
+
+    <aside id="detailPanel" class="float-panel float-detail" aria-label="Industry detail">
+      <div id="detail">
+        <p>Click a company or slice. The slice stays; the rest of the cube shifts left along −x and fades. Esc clears selection, then focus.</p>
+      </div>
+      <p class="note foot">Data via <code>/api/bundle</code>.</p>
+    </aside>
+
+    <button type="button" id="helpToggle" class="help-toggle" title="Toggle controls help (?)">?</button>
+    <div id="navHint" class="nav-hint hidden">
+      <strong>Controls</strong><br />
+      Left-drag orbit · Right-drag pan · Scroll zoom · Middle-click standard<br />
+      <kbd>Q</kbd>/<kbd>E</kbd> yaw · <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> pan · <kbd>R</kbd>/<kbd>F</kbd> dolly · <kbd>Shift</kbd> faster<br />
+      Click company / stage tag / slice · <kbd>[</kbd><kbd>]</kbd> focus slice · double-click empty clears · <kbd>Esc</kbd> layered clear<br />
+      <kbd>C</kbd> / middle-click standard view · <kbd>?</kbd> help<br /><br />
+      <strong>Space</strong><br />
+      One industry chain = one cube of slices. Power (back, <strong>−s</strong>) → models (front, <strong>+s</strong>). <strong>Dot color = stage: power deep blue → models light blue.</strong> Dot size = market cap (log); no Bloomberg row → revenue proxy. Axes and guide lines are not drawn (clean view). Stage spacing <strong>d</strong> (default 250%; drag 0%–400%). Focus: the slice stays, the rest shifts left along <strong>−x</strong> and fades.
+    </div>
+    <div id="statusBar" class="status-bar">All slices · 0 companies</div>
+    <div id="hoverTip" class="hover-tip" hidden></div>
+    <div class="hud">
+      <a class="chip" href="/" title="Engineering homepage">Home</a>
+      <button class="chip" id="stageBack" type="button" title="Back to the stage list">← Stages</button>
+      <span class="hud-legend" aria-hidden="true">
+        <span class="cloud-bar"></span>
+        <span class="cloud-bar-end">power</span>
+        <span class="cloud-bar-end">models</span>
+      </span>
+      <span class="hud-legend size-note" aria-hidden="true">dot = market cap (log) · no Bloomberg row → revenue proxy</span>
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="us">US only</button>
+      <button class="chip" data-filter="intl">Non-US only</button>
+      <button class="chip" id="standardView">Standard (C)</button>
+      <button class="chip" id="resetCam">Reset view</button>
+      <label class="d-control" title="Stage spacing d (0%–400%)">
+        <span class="d-label">d</span>
+        <input id="gapD" type="range" min="0" max="400" step="1" value="250" />
+        <span id="gapDPct" class="d-pct">250%</span>
+      </label>
+      <div class="filter-mod" aria-label="Company filter">
+        <div class="filter-mod-title">Filter · 筛选</div>
+        <label class="filter-field">
+          <span class="filter-label">Stage · 产业链</span>
+          <select id="stageFilter" class="filter-select">
+            <option value="">All · 全部</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span class="filter-label">Revenue · 营收 (US$ B)</span>
+          <span class="filter-rev">
+            <input id="revMin" type="number" min="0" step="1" placeholder="≥ min" />
+            <span class="filter-rev-sep">–</span>
+            <input id="revMax" type="number" min="0" step="1" placeholder="≤ max" />
+          </span>
+        </label>
+        <button class="chip" id="revClear" type="button">Clear revenue · 清空</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>

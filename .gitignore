@@ -1,0 +1,8 @@
+.DS_Store
+**/__pycache__/
+*.pyc
+*.db-journal
+class-3-coords/BICS-Classification/bics_entities_20261003.db
+**/~$*
+
+class-3-coords/BICS-Classification/bics_hierarchy.db
